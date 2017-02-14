@@ -13,10 +13,15 @@ LA_BM_vehicle<-NEI %>%
 LA_BM_vehicle$year<-as.factor(LA_BM_vehicle$year)
 LA_BM_vehicle$fips<-as.factor(LA_BM_vehicle$fips)
 #plot
+##changing levels for fips to display fips name rather than number
+levels(LA_BM_vehicle$fips)<-c("LA County","Baltimore City")
+##creating plot
 library(ggplot2)
 ggplot(data=LA_BM_vehicle,aes(x=year,y=Emissions))+
   stat_summary(fun.y=sum,geom="bar")+
-  facet_grid(fips~.,scales="free_y")
+  facet_grid(fips~.,scales="free_y")+
   labs(y="PM 2.5 in tons",
        x="Year",
        title="Plot5: LA County vs Baltimore City Emissions from Vehicles 1999-2008")
+dev.copy(device=png,file="plot6.png",height=680,width=880)
+dev.off()

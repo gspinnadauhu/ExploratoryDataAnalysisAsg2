@@ -19,3 +19,5 @@ ggplot(data=NEI_vehicle,aes(x=year,y=Emissions))+
   labs(y="PM 2.5 in tons",
        x="Year",
        title="Plot5: U.S. Emissions from Vehicles 1999-2008")
+dev.copy(device=png,file="plot5.png",height=480,width=680)
+dev.off()

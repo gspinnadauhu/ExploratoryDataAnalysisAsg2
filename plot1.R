@@ -7,3 +7,5 @@ barplot(NEIplot1,
         main="Plot1: Total PM2.5 emissions",
         xlab="Year",
         ylab="PM 2.5 in tons")
+dev.copy(device=png,file="plot1.png",height=480,width=680)
+dev.off()

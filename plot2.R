@@ -11,3 +11,5 @@ barplot(NEIplot2,
         main="Plot2: Total PM2.5 emissions, Baltimore City",
         xlab="Year",
         ylab="PM 2.5 in tons")
+dev.copy(device=png,file="plot2.png",height=480,width=680)
+dev.off()

@@ -19,3 +19,5 @@ ggplot(data=bmorecity_type,aes(x=Year,y=Emissions))+
   labs(y="PM 2.5 in tons",
        x="Year",
        title="Plot3: Emissions by type for Baltimore City 1999-2008")
+dev.copy(device=png,file="plot3.png",height=480,width=680)
+dev.off()

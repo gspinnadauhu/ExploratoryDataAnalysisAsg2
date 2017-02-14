@@ -19,3 +19,5 @@ ggplot(data=NEI_coal,aes(x=year,y=Emissions))+
   labs(y="PM 2.5 in tons",
        x="Year",
        title="Plot4: U.S. Emissions from Coal related sources 1999-2008")
+dev.copy(device=png,file="plot4.png",height=480,width=680)
+dev.off()
