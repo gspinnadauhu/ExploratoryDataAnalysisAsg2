@@ -13,6 +13,7 @@ NEI_vehicle<-NEI %>%
   select(Emissions,year)
 NEI_vehicle$year<-as.factor(NEI_vehicle$year)
 #plot
+library(ggplot2)
 ggplot(data=NEI_vehicle,aes(x=year,y=Emissions))+
   stat_summary(fun.y=sum,geom="bar")+
   labs(y="PM 2.5 in tons",
