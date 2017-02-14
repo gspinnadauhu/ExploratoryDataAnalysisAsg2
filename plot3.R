@@ -10,8 +10,12 @@ bmorecity_type<-NEI %>%
 ##sum by type by year
 bmorecity_type<-with(bmorecity_type,aggregate(Emissions,by=list(year,type),sum))
 names(bmorecity_type)<-c("Year","Type","Emissions")
+bmorecity_type$Year<-as.factor(bmorecity_type$Year)
 #plot
 library(ggplot2)
-ggplot(data=bmorecity_type,aes(x=as.factor(Year),y=Emissions))+
+ggplot(data=bmorecity_type,aes(x=Year,y=Emissions))+
   geom_bar(stat="identity")+
-  facet_grid(.~Type)
+  facet_grid(.~Type)+
+  labs(y="PM 2.5 in tons",
+       x="Year",
+       title="Plot3: Emissions by type for Baltimore City 1999-2008")
